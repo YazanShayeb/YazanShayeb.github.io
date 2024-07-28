@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .quiz-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #continueButton {
+        display: none;
+        margin-top: 20px;
+        background-color: #4CAF50; 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+        @keyframes rainbow {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: blue; }
+            71% { color: indigo; }
+            85% { color: violet; }
+            100% { color: red; }
+        }
+
+        h1 {
+            font-size: 2em;
+            animation: rainbow 5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Happpppppyyyyy anniversaryyyyyyyyyy!!!!!</h1>
+        <h2>Let's first make sure it's Jana 😈</h2>
+        <h3>To proceed you must answer ALL questions correctly</h3>
+        <form id="quizForm">
+            <div class="question">
+                <label for="question1">1. What’s the date of our anniversary? (dd/mm/yyyy)</label>
+                <input type="text" id="question1" name="question1" placeholder="ex: 6/12/2003 or 06/12/2003" required>
+            </div>
+            <div class="question">
+                <label for="question2">2. Where did I open the box you gave me?</label>
+                <select id="question2" name="question2" required>
+                    <option value="option1">حديقة الإستقلال</option>
+                    <option value="option2">مقهى ايفل</option>
+                    <option value="option3">مقهى عشوائي قريب من الحديقة</option>
+                    <option value="option4">في السرفيس في الطريق الى المنزل</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="question3">3. Where was our first kiss?</label>
+                <select id="question3" name="question3" required>
+                    <option value="option1">في بيتي</option>
+                    <option value="option2">باب تامر القديم</option>
+                    <option value="option3">بيت مس سارة</option>
+                    <option value="option4">درج هافانا</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+        <button id="continueButton" onclick="window.location.href='temp.html'">Continue</button>
+    </div>
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const answer1 = document.getElementById('question1').value.trim();
+            const answer2 = document.getElementById('question2').value;
+            const answer3 = document.getElementById('question3').value;
+
+            let score = 0;
+
+            if (answer1 === '29/7/2019' || answer1 === '29/07/2019') {
+                score++;
+            }
+            if (answer2 === 'option3') {
+                score++;
+            }
+            if (answer3 === 'option2') {
+                score++;
+            }
+
+            let resultMessage = '';
+
+            if (score === 3) {
+                resultMessage = 'WOOOOOO! All questions are correct, you may enter ya 2amar 😘😘🤍🤍';
+                document.getElementById('continueButton').style.display = 'block';
+            } else {
+                score = 0;
+                resultMessage = 'Janaaaa, you got some questions wronggg 🤬🤬🤬, try again';
+                document.getElementById('continueButton').style.display = 'none';
+            }
+
+            document.getElementById('result').textContent = resultMessage;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Lane</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .memory-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .memory-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            filter: blur(10px);
+            cursor: pointer;
+            transition: filter 0.3s ease;
+        }
+        .memory-container img.revealed {
+            filter: none;
+            cursor: default;
+        }
+        .question-popup {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .question-popup input {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            width: calc(100% - 20px);
+        }
+        .question-popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .question-popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🤍Come with me on a beautiful trip down memory lane🤍</h1>
+    <h2>Click each picture to reveal a question. If asnwered correctly a little surprise will pop up😉</h2>
+    <!-- Memory containers for images -->
+    <div class="memory-container">
+        <img src="images/image1.jpg" alt="Memory Image 1" data-question="Where did we first meet?" data-answer="tamer" >
+    </div>
+    <div class="memory-container">
+        <img src="images/image2.jpg" alt="Memory Image 2" data-question="What book did you suggest that I read during the access program?" data-answer="the little prince">
+    </div>
+    <div class="memory-container">
+        <img src="images/image3.jpg" alt="Memory Image 3" data-question="There's a black shirt you gave me that's very dear to my heart. What did it say?" data-answer="مش زي الباقي">
+    </div>
+    <div class="memory-container">
+        <img src="images/image4.jpg" alt="Memory Image 4" data-question="When we first started dating. I also got you a custom made black shirt. What did that one say?" data-answer="سطوح ادونيس">
+    </div>
+    <div class="memory-container">
+        <img src="images/image5.jpg" alt="Memory Image 5" data-question="When I got hospitalised following the access' sports day. Where did that sports day take place?" data-answer="مجمع رام الله الترويحي">
+    </div>
+    <div class="memory-container">
+        <img src="images/image6.jpg" alt="Memory Image 6" data-question="When was our first date?" data-answer="8/8/2019">
+    </div>
+    <div class="memory-container">
+        <img src="images/image7.jpg" alt="Memory Image 7" data-question="Where did we go out first date after tawjihi?" data-answer="sufi">
+    </div>
+    <div class="memory-container">
+        <img src="images/image8.jpg" alt="Memory Image 8" data-question="What was the bigsam song we hugged to during his concert in Rawabi? (in arabic)" data-answer="اول مرة">
+    </div>
+    <h1>These next images are our reactions and my response to your confession.</h1> 
+    <h2>🤭These next questions will be a litte harder🤭</h2>
+    <div class="memory-container">
+        <img src="images/image9.jpg" alt="Memory Image 9" data-question="What colour was my shirt in our first ever picture together?" data-answer="orange">
+    </div>
+    <div class="memory-container">
+        <img src="images/image10.jpg" alt="Memory Image 10" data-question="What date was the early birthday party you organised for me in havana" data-answer="24/3/2021">
+    </div>
+
+    <div class="question-popup" id="questionPopup">
+        <p id="questionText"></p>
+        <input type="text" id="answerInput" placeholder="Your answer here">
+        <button onclick="submitAnswer()">Submit</button>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.memory-container img');
+        const questionPopup = document.getElementById('questionPopup');
+        const questionText = document.getElementById('questionText');
+        const answerInput = document.getElementById('answerInput');
+        let currentImage;
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                if (!img.classList.contains('revealed')) {
+                    currentImage = img;
+                    questionText.textContent = img.getAttribute('data-question');
+                    questionPopup.style.display = 'block';
+                }
+            });
+        });
+
+        function submitAnswer() {
+            const correctAnswer = currentImage.getAttribute('data-answer').toLowerCase();
+            if (answerInput.value.trim().toLowerCase() === correctAnswer) {
+                currentImage.classList.add('revealed');
+                questionPopup.style.display = 'none';
+                answerInput.value = '';
+            } else {
+                alert('NO NO NO JANAAA. TRY AGAINNNN 🤬');
+            }
+        }
+    </script>
+</body>
+</html>
