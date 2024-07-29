@@ -35,6 +35,14 @@
             filter: none;
             cursor: default;
         }
+        .memory-container p {
+            display: none;
+        }
+        .memory-container p.revealed {
+            display: block;
+            margin-top: 20px;
+            color: #333;
+        }
         .question-popup {
             display: none;
             background-color: rgba(0, 0, 0, 0.8);
@@ -65,45 +73,71 @@
             margin-top: 10px;
         }
         .question-popup button:hover {
+            background-color: #f37ae5;
+        }
+        .continue-button {
+            display: none;
+            background-color: #af4c9b;
+            color: white;
+            border: none;
+            padding: 30px 60px;
+            font-size: 1.5em; 
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: calc(100% - 40px); 
+        }
+
+        .continue-button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
     <h1>🤍Come with me on a beautiful trip down memory lane🤍</h1>
-    <h2>Click each picture to reveal a question. If asnwered correctly a little surprise will pop up😉</h2>
+    <h2>Click each picture to reveal a question. If answered correctly a little surprise will pop up😉</h2>
     <!-- Memory containers for images -->
     <div class="memory-container">
-        <img src="images/image1.jpg" alt="Memory Image 1" data-question="Where did we first meet?" data-answer="tamer" >
+        <img src="images/image1.jpg" alt="Memory Image 1" data-question="Where did we first meet?" data-answer="tamer" data-paragraph="P1">
+        <p>This birthday party is so so much more than a birthday party. The fact that you went out of your way during all that was going during that period, with also tawjihi happening, you still planned that birthday party. It was the first time you met Ayham too lol. I appreciate it loads. It goes to show how much effort you're willing to put in, and how many hoops you're willing to jump through to make me happy. I appreciate you Jana 🤍</p>
     </div>
     <div class="memory-container">
-        <img src="images/image2.jpg" alt="Memory Image 2" data-question="What book did you suggest that I read during the access program?" data-answer="the little prince">
+        <img src="images/image2.jpg" alt="Memory Image 2" data-question="What book did you suggest that I read during the access program?" data-answer="the little prince" data-paragraph="P2">
+        <p>The way you lean on my shoulder in a lot of our pictures feels so warm. I do it too, it comes naturally I don't really think about it. Bas leaning on your shoulder feels so safe, so warm, so special. Thank you for always having a shoulder I can lean on. Thank you for being there for me. EVERY SINGLE TIME. </p>
     </div>
     <div class="memory-container">
-        <img src="images/image3.jpg" alt="Memory Image 3" data-question="There's a black shirt you gave me that's very dear to my heart. What did it say?" data-answer="مش زي الباقي">
+        <img src="images/image7.jpg" alt="Memory Image 3" data-question="There's a black shirt you gave me that's very dear to my heart. What did it say? (in arabic)" data-answer="مش زي الباقي" data-paragraph="P3">
+        <p>You can't really see it in this picture. Bas this "مش زي الباقي" shirt that you got me, means so much to me. I always try to not overwear anything you get me as to not wear it down, bas at my heaviest when I also felt like I'm at my lowest it was the only shirt that I thought I looked good in. You'll find me wearing it a lot in most pictures of me back when I was at my biggest. It's so dear to my heart.  </p>
     </div>
     <div class="memory-container">
-        <img src="images/image4.jpg" alt="Memory Image 4" data-question="When we first started dating. I also got you a custom made black shirt. What did that one say?" data-answer="سطوح ادونيس">
+        <img src="images/image4.jpg" alt="Memory Image 4" data-question="When we first started dating. I also got you a custom made black shirt. What did that one say? (in arabic)" data-answer="سطوح ادونيس" data-paragraph="p4">
+        <p>I think this was the very first gift I got you. I'm pretty sure you only wore it a couple of times. It's not the best quality printing bas at the time I didn't know many places that printed shirts well, if even there were any. I got my inspiration from adonis' merch store, bas obviously it was in Lebanon. Fa I tried to find a good design to the song "سطوح ادونيس", w I came across one bas it needed to be modified so it would look good printed on a shirt. I had to manually carve out the design so it would have no background that would stick out when printed on a shirt. It was the first time I actually put effort into a thoughtful gift ever. I'm always happy to get you thoughtful gifts. Gift giving is definitely one of the main ways I show my love to you. (I coudln't find a picture of you wearing the shirt) </p>
     </div>
     <div class="memory-container">
-        <img src="images/image5.jpg" alt="Memory Image 5" data-question="When I got hospitalised following the access' sports day. Where did that sports day take place?" data-answer="مجمع رام الله الترويحي">
+        <img src="images/image5.jpg" alt="Memory Image 5" data-question="When I got hospitalised following the access' sports day. Where did that sports day take place? (in arabic)" data-answer="مجمع رام الله الترويحي" data-paragraph="p5">
+        <p>The sportsss dayyyyy. It was the firsttt time you got worried about my well beinggggg. (first of many lol). B7s that's something that you influenced greatly. My well being. I never ever really cared about my physical health back then, so much so enoh right after i went to the hosptial that day. I'd go hangout all night with Rashid w m7md 3awwad w I smoked argeeleh w even some cigarettes the whole time. Bas now 5 years later. I know enoh physical health wise I don't really have the best of habits, especially eating habits. Bas you somehow made me quit smoking for good. I know I came back to it not too long ago, bas you were literally msh "the main reason". You were THE ONLY reason I quit a second time. You're honestly the only reason I don't give in to any cravings. You're the only reason I no longer get sick every couple of weeks. You're the definition of a good friend. </p>
     </div>
     <div class="memory-container">
-        <img src="images/image6.jpg" alt="Memory Image 6" data-question="When was our first date?" data-answer="8/8/2019">
+        <img src="images/image6.jpg" alt="Memory Image 6" data-question="When was our first date?" data-answer="8/8/2019" data-paragraph="p6">
+        <p>Our first date on 8/8/2019 wowowowowowooooooo. The beginning of many great dates, beautiful hangouts, and the best time of my life. I made youuu walk mn el burj la tamerrr. W y3ny you complained the whole way, sara7a rightfully so. It was august y3ny 3ez el sef w I made you walk the whole wayyyy ya 7aram. Bas it was so lovely, we entered tamer together late, as we would go on to do many more times in the future. (also we watched fast and furious don't forget that) </p>
     </div>
     <div class="memory-container">
-        <img src="images/image7.jpg" alt="Memory Image 7" data-question="Where did we go out first date after tawjihi?" data-answer="sufi">
+        <img src="images/image8.jpg" alt="Memory Image 7" data-question="Where did we go out first date after tawjihi? (in arabic)" data-answer="صوفي" data-paragraph="p7">
+        <p>Our first date after tawjihi at 'صوفي' was -even though we didn't realise it- the start of the turning point. Our lives changes so so so much after tawjihi. More than we had ever imagined. We went through so much I'd need pages to write it all out. Bas I remeber in that date. It was such a huge relief to finally see you, without tawjihi being a roadblock. It was our longest hangout in many months back then. That's also when I gave you Pluto. so he's 3 years old now lol. I remember vividly how heavenly it was to just hug you when I first saw you in Sufi.</p>
     </div>
     <div class="memory-container">
-        <img src="images/image8.jpg" alt="Memory Image 8" data-question="What was the bigsam song we hugged to during his concert in Rawabi? (in arabic)" data-answer="اول مرة">
+        <img src="images/image3.jpg" alt="Memory Image 8" data-question="What was the bigsam song we hugged to during his concert in Rawabi? (in arabic)" data-answer="اول مرة" data-paragraph="p8">
+        <p>We hugged to 'اول مرة' at Bigsam's concert in Rawabi, and ever since that moment that song takes me back exactlyyy to the feeling of hugging you and holding you in my arms. A little confession that I think I have told you before. There are two Bigsam songs that whenever they're played they bring out the purest feeling of love towards you. They make me miss you ever so much. They're "معي" and "اول مرة". They're so close to my heart.</p>
     </div>
     <h1>These next images are our reactions and my response to your confession.</h1> 
-    <h2>🤭These next questions will be a litte harder🤭</h2>
+    <h2>🤭These next questions will be a little harder🤭</h2>
     <div class="memory-container">
-        <img src="images/image9.jpg" alt="Memory Image 9" data-question="What colour was my shirt in our first ever picture together?" data-answer="orange">
+        <img src="images/image9.jpg" alt="Memory Image 9" data-question="What colour was my shirt in our first ever picture together?" data-answer="orange" data-paragraph="p9">
+        <p></p>
     </div>
     <div class="memory-container">
-        <img src="images/image10.jpg" alt="Memory Image 10" data-question="What date was the early birthday party you organised for me in havana" data-answer="24/3/2021">
+        <img src="images/image10.jpg" alt="Memory Image 10" data-question="What date was the early birthday party you organised for me in havana?" data-answer="24/3/2021" data-paragraph="p10">
+        <p></p> 
     </div>
 
     <div class="question-popup" id="questionPopup">
@@ -112,11 +146,14 @@
         <button onclick="submitAnswer()">Submit</button>
     </div>
 
+    <button id="continueButton" class="continue-button" onclick="location.href='page3.html'">One last stop</button>
+
     <script>
         const images = document.querySelectorAll('.memory-container img');
         const questionPopup = document.getElementById('questionPopup');
         const questionText = document.getElementById('questionText');
         const answerInput = document.getElementById('answerInput');
+        const continueButton = document.getElementById('continueButton');
         let currentImage;
 
         images.forEach(img => {
@@ -133,10 +170,19 @@
             const correctAnswer = currentImage.getAttribute('data-answer').toLowerCase();
             if (answerInput.value.trim().toLowerCase() === correctAnswer) {
                 currentImage.classList.add('revealed');
-                questionPopup.style.display = 'none';
-                answerInput.value = '';
+                currentImage.nextElementSibling.classList.add('revealed');
+                checkAllAnswered();
             } else {
                 alert('NO NO NO JANAAA. TRY AGAINNNN 🤬');
+            }
+            questionPopup.style.display = 'none';
+            answerInput.value = '';
+        }
+
+        function checkAllAnswered() {
+            const allAnswered = Array.from(images).every(img => img.classList.contains('revealed'));
+            if (allAnswered) {
+                continueButton.style.display = 'block';
             }
         }
     </script>

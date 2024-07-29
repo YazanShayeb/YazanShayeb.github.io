@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartfelt Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .heart-border {
+            border: 10px solid red;
+            border-radius: 50%;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        .heart-border::before,
+        .heart-border::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            width: 40px;
+            height: 40px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart-border::before {
+            left: calc(50% - 20px);
+            transform: rotate(-45deg);
+        }
+        .heart-border::after {
+            right: calc(50% - 20px);
+            transform: rotate(45deg);
+        }
+        .heart-border span {
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px; /* Adjust size as needed */
+        }
+        .message {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .wiggle-img {
+            position: absolute;
+            width: 300x; /* Triple the size */
+            height: 350px; /* Triple the size */
+            animation: wiggle 2s infinite;
+        }
+        .wiggle-img3 {
+            position: absolute;
+            width: 250x; /* Triple the size */
+            height: 300px; /* Triple the size */
+            animation: wiggle 2s infinite;
+        }
+        .wiggle-img1 {
+            top: 50%;
+            left: -300px; /* Farther away from the border */
+            transform: translateY(-50%);
+        }
+        .wiggle-img2 {
+            top: 50%;
+            right: -410px; /* Farther away from the border */
+            transform: translateY(-50%);
+        }
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg) translateY(-50%);
+            }
+            25% {
+                transform: rotate(10deg) translateY(-50%);
+            }
+            50% {
+                transform: rotate(0deg) translateY(-50%);
+            }
+            75% {
+                transform: rotate(-10deg) translateY(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-border">
+        <div class="message">
+            <h1>To My Jana,</h1>
+            <p>
+                Every moment with you is a treasure, and every memory is a piece of my heart. From our first encounter in tamer to our countless adventures multiple cities, each experience has been filled with love, joy, and endless warmth. You are my sunshine on cloudy days and my rock when the world feels heavy. I am grateful for every second we share, and I look forward to creating even more beautiful memories together. Here's to us, to love, and to a lifetime of happiness.
+            </p>
+            <p>
+                I love you so much, more than words can describe.
+                <br>
+                Your boyfriend and husband-to-be.
+                <br>
+                Yazan
+                <br>
+                🤍🤍
+            </p>
+        </div>
+        <img src="images/kiss1.jpg" alt="Picture 1" class="wiggle-img wiggle-img1">
+        <img src="images/kiss2.jpg" alt="Picture 2" class="wiggle-img3 wiggle-img2">
+    </div>
+</body>
+</html>
